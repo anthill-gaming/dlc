@@ -18,7 +18,6 @@ class BundleHandler(CreatingMixin, UpdatingMixin, DeletionMixin, DetailMixin,
         fetching, creating, updating and deleting.
     """
     model = Bundle
-    form_class = BundleForm
 
     def get_form_class(self):
         """Return the form class to use in this handler."""
