@@ -25,9 +25,6 @@ class BundleHandler(CreatingMixin, UpdatingMixin, DeletionMixin, DetailMixin,
         form_class = super().get_form_class()
         if self.request.method in ('PUT',):  # Updating
             # Patching form meta
-            class Meta(form_class.Meta):
-                all_fields_optional = True
-                assign_required = False
-
-            form_class.Meta = Meta
+            setattr(form_class.Meta, 'all_fields_optional', True)
+            setattr(form_class.Meta, 'assign_required', False)
         return form_class
