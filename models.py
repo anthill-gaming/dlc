@@ -115,6 +115,7 @@ class Bundle(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(128), nullable=False)
     key = db.Column(db.String(64), nullable=False)
+    # file = db.Column(db.FileType(upload_to='bundles/files'), nullable=False)
     filename = db.Column(db.String(128), nullable=False, unique=True)
     hash = db.Column(JSONType, nullable=False)
     filter = db.Column(JSONType, nullable=False)
